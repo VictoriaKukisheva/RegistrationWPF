@@ -1,0 +1,103 @@
+﻿<Page x:Class="RegistrationWPF.PageMain.FurniturePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RegistrationWPF.PageMain"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="700"
+      Title="FurniturePage" Loaded="Page_Loaded_1">
+
+    <Grid Margin="10" Name="GridMain">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition Height="50" Name="AdminRow"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0" Grid.Row="0"  Text="Поиск " Name="TbFinder1"
+                       Style="{StaticResource TextBlockRegist}" FontSize="15" Margin="0"/>
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="Сортировка"
+                       Style="{StaticResource TextBlockRegist}" FontSize="15" Margin="0"/>
+            <TextBlock Grid.Column="2" Grid.Row="0" Text="Фильтрация"
+                       Style="{StaticResource TextBlockRegist}" FontSize="15" Margin="0"/>
+
+            <TextBox Grid.Column="0" Grid.Row="1"  Name="TbFinder" Style="{StaticResource TextBox}"
+                     TextChanged="TbFinder_TextChanged"/>
+            <ComboBox Grid.Column="1" Grid.Row="1"  Name="CbSort" Style="{StaticResource ComboBox}"
+                      SelectionChanged="CbSort_SelectionChanged" />
+            <ComboBox Grid.Column="2" Grid.Row="1" Name="CbFilter" Style="{StaticResource ComboBox}" 
+                      SelectionChanged="CbFilter_SelectionChanged"/>
+        </Grid>
+        
+        <ListView Grid.Row="1" Margin="10" Name="LbFurniture" 
+                     MouseDoubleClick="LbProducts_MouseDoubleClick" Background="#33FFFFFF" >
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                    <Setter Property="Background" Value="{Binding CountZero}"/>
+                    <Setter Property="Height" Value="128"/>
+                    
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Grid.Column="0" Source="{Binding CorrectImage}" Stretch="Fill" />
+                        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10,0,0,0" Width="410">
+                            <TextBlock FontSize="20" FontWeight="Bold" Style="{StaticResource TextBlockRegist}">
+                                    <Run Text="{Binding Name}" />
+                            </TextBlock>
+                            <TextBlock Style="{StaticResource TextBlockMain}">
+                                    <Run Text="Описание: "/>
+                                    <Run Text="{Binding Description}"/>
+                            </TextBlock>
+
+                            <TextBlock Style="{StaticResource TextBlockMain}">
+                                    <Run Text="Производитель: "/>
+                                    <Run Text="{Binding Producer.Name}"/>
+                            </TextBlock>
+                            <TextBlock Style="{StaticResource TextBlockMain}">
+                                    <Run Text="Цена: "/>
+                                    <Run Text="{Binding Cost, StringFormat=f2}"/>
+                            </TextBlock>
+                        </StackPanel>
+
+                        <TextBlock Grid.Column="2" TextWrapping="Wrap" HorizontalAlignment="Right" Style="{StaticResource TextBlockMain}">
+                                <Run Text="Количество на складе: "/>
+                                <Run Text="{Binding Existance}"/>
+                        </TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid Grid.Row="2">
+            <Button Content="Добавить" Width="200" Style="{StaticResource Button}" Background="#FFFFAB4F"
+                        Name="BtnAddFurniture" Click="BtnAddFurniture_Click"/>
+            <TextBlock Name="TbFindeFurniture" Style="{StaticResource TextBlockRegist}" Foreground="#FFFFAB4F"
+                       TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <Button Content="Пользователи" Width="110" Style="{StaticResource Button}" Background="#FF0074DD"
+                        Name="BtnChangeToUserTable" Click="BtnChangeToUserTable_Click" Margin="560,10,10,10"/>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,86 @@
+﻿<Page x:Class="RegistrationWPF.AdminPage.AddEditUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RegistrationWPF.AdminPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="700"
+      Title="AddEditUser" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Введите Фамилию: " Grid.Column="0" Grid.Row="0"
+                   Style="{StaticResource TextBlockRegist}" />
+        <TextBox x:Name="SurnameTxt" Style="{StaticResource TextBox}" Grid.Column="1" Grid.Row="0"
+                Text="{Binding Person.Surname}" Margin="5" PreviewTextInput="SurnameTxt_PreviewTextInput"/>
+
+        <TextBlock Text="Введите Имя: " Grid.Column="0" Grid.Row="1"
+                   Style="{StaticResource TextBlockRegist}" VerticalAlignment="Center"/>
+        <TextBox x:Name="NameTxt" Style="{StaticResource TextBox}" Grid.Column="1" Grid.Row="1"
+                Text="{Binding Person.Name}" PreviewTextInput="NameTxt_PreviewTextInput"/>
+
+        <TextBlock Text="Введите Отчество: " Grid.Column="0" Grid.Row="2" 
+                   Style="{StaticResource TextBlockRegist}" VerticalAlignment="Center"/>
+        <TextBox x:Name="SurnameTxt1" Style="{StaticResource TextBox}" Grid.Column="1" Grid.Row="2"
+                Text="{Binding Person.Secondname}" PreviewTextInput="SurnameTxt1_PreviewTextInput"/>
+
+        <TextBlock Text="Введите Дату рождения: " Grid.Column="0" Grid.Row="3"
+                   Style="{StaticResource TextBlockRegist}" VerticalAlignment="Center"/>
+        <DatePicker x:Name="datePicker" BorderThickness="0" FontFamily="Ebrima" Grid.Column="1" Grid.Row="3"
+                   Margin="5,15" SelectedDate="{Binding Person.Date}" Background="#7F2799FF" FontWeight="Normal" FontStyle="Italic"
+                    />
+
+        <TextBlock Text="Роль пользователя: " Grid.Column="0" Grid.Row="4" 
+                   Style="{StaticResource TextBlockRegist}" VerticalAlignment="Center"/>
+        <ComboBox Name="Roles" Style="{StaticResource ComboBox}" Grid.Column="1" Grid.Row="4" Margin="5, 15"/>
+
+        <TextBlock Text="Введите Почту: " Grid.Column="2" Grid.Row="0"
+                    Style="{StaticResource TextBlockRegist}" VerticalAlignment="Center"/>
+        <TextBox x:Name="MailTxt" Style="{StaticResource TextBox}" Grid.Column="3" Grid.Row="0"
+                 Text="{Binding Mail}"/>
+
+        <TextBlock Text="Введите номер телефона: " Grid.Column="2" Grid.Row="1"
+                    Style="{StaticResource TextBlockRegist}" VerticalAlignment="Center"/>
+        <TextBox x:Name="PhoneTxt" Style="{StaticResource TextBox}" Grid.Column="3" Grid.Row="1"
+                   Text="{Binding Phone}" VerticalAlignment="Center" PreviewTextInput="PhoneTxt_PreviewTextInput"/>
+
+        <TextBlock Text="Введите Логин: " Grid.Column="2" Grid.Row="2"
+                    Style="{StaticResource TextBlockRegist}" VerticalAlignment="Center"/>
+        <TextBox x:Name="LoginTxt" Style="{StaticResource TextBox}" 
+                   Text="{Binding Login}" Grid.Column="3" Grid.Row="2"/>
+
+        <TextBlock Text="Введите Пароль: " Grid.Column="2" Grid.Row="3"
+                    Style="{StaticResource TextBlockRegist}" VerticalAlignment="Center"/>
+        <PasswordBox x:Name="PasswordTxt" Style="{StaticResource TextPassword}"
+                   Grid.Column="3" Grid.Row="3" />
+
+        <TextBlock Text="Подтвердите пароль: " Grid.Column="2" Grid.Row="4"
+                Style="{StaticResource TextBlockRegist}"/>
+        <PasswordBox x:Name="DblPasswordTxt" Style="{StaticResource TextPassword}"
+               PasswordChanged="DblPasswordTxt_PasswordChanged" Grid.Column="3" Grid.Row="4"/>
+
+        <Button x:Name="AddEditBtn" Click="AddEditBtn_Click" Content="Изменить" Background="#FFFFAB4F" 
+                Style="{StaticResource Button}" Grid.Row="5" Margin="10,14,10,14"/>
+        <Button x:Name="DeleteBtn" Click="DeleteBtn_Click" Content="Удалить" Background="#FF2799FF" 
+                Style="{StaticResource Button}" Grid.Column="1" Grid.Row="5" Margin="10,14,10,14"/>
+        <Button x:Name="Back_Btn" Content="Назад" Background="#FF0074DD" 
+                Style="{StaticResource Button}" Grid.Column="3" Grid.Row="6" Width="50" HorizontalAlignment="Right" Click="Back_Btn_Click"/>
+
+    </Grid>
+</Page>

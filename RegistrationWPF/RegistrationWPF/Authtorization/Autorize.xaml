@@ -1,0 +1,43 @@
+﻿<Window x:Class="RegistrationWPF.Authtorization.Autorize"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistrationWPF.Authtorization"
+        mc:Ignorable="d"
+        
+        Title="Авторизация" Height="400" Width="300"
+        WindowStyle="ThreeDBorderWindow"
+        Icon="/RegistrationWPF;component/Resourses/icon-authorization.png" 
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#FF1A1A1A">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="350*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Orientation="Horizontal">
+            <Image Source="../Resourses/icons.png" Margin="0,0,5,0"/>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                <TextBlock Style="{StaticResource Title}" Text="Мебельный магазин " FontSize="18" FontWeight="Normal" Foreground="White"/>
+                <TextBlock Style="{StaticResource Title}" Text="Russian IKEA" FontSize="30" Foreground="#FFFFAB4F"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Margin="0,0,0,0" Grid.Row="1" >
+            <Label Content="Введите логин:" Style="{StaticResource Label}"/>
+            <TextBox x:Name="txtLogin" Style="{StaticResource TextBox}" Background="#33FFFFFF"/>
+
+            <Label Content="Введите пароль:" Style="{StaticResource Label}"/>
+            <PasswordBox x:Name="txtPassword" Style="{StaticResource TextPassword}"/>
+
+            <Button x:Name="ButtonRegist" Background="#FFFFAB4F" Content="Войти" 
+                    Click="ButtonIN_Click" Style="{StaticResource Button}"/>
+            <Button x:Name="ButtonRegist1" Content="Регистрация" Background="#FF2799FF" 
+                    Click="ButtonRegist_Click" Style="{StaticResource Button}"/>
+            <Button x:Name="ButtonRegist2" Content="Войти как гость" Background="#FF0074DD" 
+                    Click="ShowFurniture_Click" Style="{StaticResource Button}"/>
+        </StackPanel>
+    </Grid>
+</Window>

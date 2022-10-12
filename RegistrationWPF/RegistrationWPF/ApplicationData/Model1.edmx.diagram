@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2344f785d7714dfdabb5c303a69ebc32" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.BuyFurniture" Width="1.5" PointX="10.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BuyMaterials" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Categoty" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Furniture" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Materials" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Person" Width="1.5" PointX="0.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Producer" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Providers" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="3.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Sale" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Sales" Width="1.5" PointX="8" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Supplier" Width="1.5" PointX="5.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Suppliers" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Type" Width="1.5" PointX="5.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Types" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Units" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="6" PointY="16" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_BuyFurniture_Furniture" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_BuyFurniture_Sales" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_BuyMaterials_Materials1" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_BuyMaterials_Sale" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Materials_Categoty" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Furniture_Producer" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Furniture_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Furniture_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Materials_Providers" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Materials_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Materials_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Materials_Units" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Sale_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Sales_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_User_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_User_Role" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

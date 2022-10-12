@@ -1,0 +1,39 @@
+﻿<Window x:Class="RegistrationWPF.Authtorization.Capcha"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistrationWPF.Authtorization"
+        mc:Ignorable="d"
+        Title="CAPCHA" Height="300" Width="250" Visibility="Visible" WindowStyle="None" Background="#FF1A1A1A">
+    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="title" Grid.Row="0" Text="Подтвердите личность" Style="{StaticResource Title}" Foreground="#FFFFAB4F"/>
+
+        <TextBlock x:Name="textblock" Width="auto" Height="60" FontSize="40" FontFamily="Snap ITC" 
+                Grid.Row="1" FontStyle="Italic" TextAlignment="Center">
+            <TextBlock.Background>
+                <ImageBrush TileMode="None" Stretch="UniformToFill" ImageSource="/Resourses/bg6.png"/>
+            </TextBlock.Background>
+        </TextBlock>
+        <TextBlock x:Name="text" Text="Введите текст с изображения: " 
+                Grid.Row="2" Style="{StaticResource TextBlockRegist}" FontSize="16"/>
+        <TextBlock x:Name="lblTime" Style="{StaticResource TextBlockRegist}" 
+                Grid.Row="3" HorizontalAlignment="Center"/>
+        
+        <TextBox x:Name="textBox" Style="{StaticResource TextBox}" Margin="5" Grid.Row="4"/>
+        <Button x:Name="close_Btn" Content="Подтвердить" Click="Close_Btn_Click"
+                Background="#FF2799FF" Style="{StaticResource Button}" Grid.Row="5"/>
+
+    </Grid>
+</Window>
